@@ -17,8 +17,8 @@ import java.util.*;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-    private Logger logger = LoggerFactory.getLogger(AdminController.class);
-    private String applicationName = "It's Party Time!!";
+    private final Logger logger = LoggerFactory.getLogger(AdminController.class);
+    private final String applicationName = "It's Party Time!!";
     @Autowired
     private PartyRepository partyRepository;
     @Autowired
