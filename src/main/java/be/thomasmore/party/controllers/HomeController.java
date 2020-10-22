@@ -100,7 +100,7 @@ public class HomeController {
                     break;
             }
         }
-        logger.info(String.format("interpreted: min = %d, max=%d, venueN vame=%s", minNrOfPersons, maxNrOfPersons, venueNameSearchString));
+        logger.info(String.format("interpreted: min = %d, max=%d, venueName=%s", minNrOfPersons, maxNrOfPersons, venueNameSearchString));
         model.addAttribute("venues", venueRepository.findVenuesBySearchCriteria(minNrOfPersons, maxNrOfPersons, venueNameSearchString));
         model.addAttribute("minNrOfPersons", minNrOfPersons);
         model.addAttribute("maxNrOfPersons", maxNrOfPersons);
