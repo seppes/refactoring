@@ -6,17 +6,12 @@ import be.thomasmore.party.model.Venue;
 import be.thomasmore.party.repositories.ArtistRepository;
 import be.thomasmore.party.repositories.PartyRepository;
 import be.thomasmore.party.repositories.VenueRepository;
-//import javafx.scene.text.FontPosture;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
