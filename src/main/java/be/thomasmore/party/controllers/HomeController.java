@@ -20,7 +20,7 @@ import java.util.Optional;
 
 @Controller
 public class HomeController {
-    private Logger logger = LoggerFactory.getLogger(HomeController.class);
+    private final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     private PartyRepository partyRepository;
@@ -31,7 +31,7 @@ public class HomeController {
     @Autowired
     private PartyAnimalRepository partyAnimalRepository;
 
-    private String applicationName = "It's Party Time!!";
+    private final String applicationName = "It's Party Time!!";
 
     @GetMapping({"/", "/parties"})
     public String parties(Model model) {
