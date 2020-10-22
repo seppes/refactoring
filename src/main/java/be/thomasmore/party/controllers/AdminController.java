@@ -29,7 +29,7 @@ public class AdminController {
     @GetMapping({"/edit-party", "/edit-party/{partyId}"})
     public String editParty(@PathVariable(required = false) int partyId, Model model) {
         Optional<Party> optionalPartyFromDb = partyRepository.findById(partyId);
-        Party party = (optionalPartyFromDb.isPresent()) ? optionalPartyFromDb.get() : null;
+        Party party = optionalPartyFromDb.orElse(null);
         model.addAttribute("appName", applicationName);
         model.addAttribute("party", party);
         model.addAttribute("venues", venueRepository.findAll());
