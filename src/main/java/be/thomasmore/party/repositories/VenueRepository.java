@@ -4,6 +4,7 @@ import be.thomasmore.party.model.Venue;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+
 import java.util.Optional;
 
 public interface VenueRepository extends CrudRepository<Venue, Integer> {
@@ -13,7 +14,7 @@ public interface VenueRepository extends CrudRepository<Venue, Integer> {
             " (:min is null or v.maxNumberOfPersons >= :min) and " +
             " (:max is null or v.maxNumberOfPersons <= :max) and " +
             " (:venueNameSearchString is null or v.venueName like %:venueNameSearchString%) ")
-    public Iterable<Venue> findVenuesBySearchCriteria(@Param("min") Integer min,
-                                                      @Param("max") Integer max,
-                                                      @Param("venueNameSearchString") String venueNameSearchString);
+    Iterable<Venue> findVenuesBySearchCriteria(@Param("min") Integer min,
+                                               @Param("max") Integer max,
+                                               @Param("venueNameSearchString") String venueNameSearchString);
 }
