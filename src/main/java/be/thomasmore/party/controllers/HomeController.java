@@ -81,18 +81,23 @@ public class HomeController {
         model.addAttribute("filterButtons", new String[]{"all", "S", "M", "L", "XL"});
 
         if (minNrOfPersons == null && maxNrOfPersons == null && size != null) {
-            if (size.equals("S" )) {
-                minNrOfPersons = null;
-                maxNrOfPersons = 100;
-            } else if (size.equals("M" )) {
-                minNrOfPersons = 100;
-                maxNrOfPersons = 300;
-            } else if (size.equals("L" )) {
-                minNrOfPersons = 300;
-                maxNrOfPersons = 500;
-            } else if (size.equals("XL" )) {
-                minNrOfPersons = 500;
-                maxNrOfPersons = null;
+            switch (size) {
+                case "S":
+                    minNrOfPersons = null;
+                    maxNrOfPersons = 100;
+                    break;
+                case "M":
+                    minNrOfPersons = 100;
+                    maxNrOfPersons = 300;
+                    break;
+                case "L":
+                    minNrOfPersons = 300;
+                    maxNrOfPersons = 500;
+                    break;
+                case "XL":
+                    minNrOfPersons = 500;
+                    maxNrOfPersons = null;
+                    break;
             }
         }
         logger.info(String.format("interpreted: min = %d, max=%d, venueN vame=%s", minNrOfPersons, maxNrOfPersons, venueNameSearchString));
