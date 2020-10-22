@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface VenueRepository extends CrudRepository<Venue, Integer> {
-    public Optional<Venue> findVenueByVenueName(String venueName);
+    Optional<Venue> findVenueByVenueName(String venueName);
 
     @Query("SELECT v FROM Venue v WHERE " +
             " (:min is null or v.maxNumberOfPersons >= :min) and " +
